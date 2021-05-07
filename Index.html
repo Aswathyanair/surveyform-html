@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <style>
+        .cntnr{
+            width: 60%;
+            border: solid 1px black;
+            margin:auto;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+        }  
+        .main{
+            margin-top:10px;
+            margin-left:10px;
+        } 
+        .rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container cntnr">
+        <table>
+        <div class="main"><b>Name</b><span style="color:red;">*</span></div>
+        <tr>  
+            <div class="main">      
+        <input type="text" id="name" style="opacity: 0.5; height: 20px;">
+        <input type="text" id="last" style="opacity: 0.5;height: 20px;">
+    </div>
+    <div style="margin-left:10px;">
+        <label for="name" style="font-size: x-small;">First</label>
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        &ensp;&ensp;&ensp;&ensp;
+        <label for="last" style="font-size: x-small;">Last</label>
+    </div> 
+        </tr>
+        <tr>
+            <div class="main">
+        <label for="E-mail"><b>E-mail</b><span style="color:red;">*</span></label>
+    </div>
+    <div class="main">
+        <input type="text" id="E-mail" style="width: 70%;opacity: 0.5;height: 20px;">
+    </div>
+        </tr>
+        <tr>
+        <div class="main"><b>Your Experience</b><span style="color: red;">*</span></div>
+        <div class="rate" style="margin-left: 10px;">
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="rate" value="1" />
+            <label for="star1" title="text">1 star</label>
+          </div>
+        </tr>
+        <br>
+        <br>
+        <br>
+        <tr>           
+          <div style="margin-left: 10px;">Overall how you rate your experience with us?</div>
+        </tr>
+        <tr>
+            <div class="main"><b>How satisfied are you with?</b><span style="color: red;">*</span></div>
+            <div  style="margin-left: 90px; margin-top: 10px;">
+                <div  ><span style="margin-left: 50px; ">Very Unsatisfied</span> 
+                <span style="margin-left: 40px;">Unsatisfied</span> 
+                <span style="margin-left: 40px;">Neutral</span>  
+                <span style="margin-left: 40px;">Satisfied</span> 
+                <span style="margin-left: 40px;">Very Satisfied</span></div>
+        </div>
+            <label for="purchase" class="main"> </label>
+            <div style="margin-left: 10px; margin-right: 10px;background-color: lightgray;">Purchase
+                <span style="margin-left: 100px;"><input type="radio" name="purchase" id="vus"></span>
+                <span style="margin-left: 120px;"><input type="radio" name="purchase" id="us"></span>
+                <span style="margin-left: 90px;"><input type="radio" name="purchase" id="ntl"></span>
+                <span style="margin-left: 70px;"><input type="radio" name="purchase" id="sd"></span>
+                <span style="margin-left: 90px;"><input type="radio" name="purchase" id="vsd"></span>
+            </div>
+        <label for="service" class="main"> </label>
+        <div style="margin-left: 10px; margin-right: 10px;">Service
+            <span style="margin-left: 110px;"><input type="radio" name="service" id="vus"></span>
+            <span style="margin-left: 120px;"><input type="radio" name="service" id="us"></span>
+            <span style="margin-left: 90px;"><input type="radio" name="service" id="ntl"></span>
+            <span style="margin-left: 70px;"><input type="radio" name="service" id="sd"></span>
+            <span style="margin-left: 90px;"><input type="radio" name="service" id="vsd"></span>
+        </div>
+        <label for="companyoverall" class="main"> </label>
+        <div style="margin-left: 10px; margin-right: 10px;background-color: lightgray;">Company Overall
+            <span style="margin-left: 43px;"><input type="radio" name="companyoverall" id="vus"></span>
+            <span style="margin-left: 120px;"><input type="radio" name="companyoverall" id="us"></span>
+            <span style="margin-left: 90px;"><input type="radio" name="companyoverall" id="ntl"></span>
+            <span style="margin-left: 70px;"><input type="radio" name="companyoverall" id="sd"></span>
+            <span style="margin-left: 90px;"><input type="radio" name="companyoverall" id="vsd"></span>
+        </div>
+        </tr>
+        <tr>
+            <div class="main"><b>How likely are you to?</b><span style="color: red;">*</span></div>
+            <div  style="margin-left: 110px; margin-top: 10px;">
+                <div  ><span style="margin-left: 50px; ">Very Unlikely</span> 
+                <span style="margin-left: 40px;">Unlikely</span> 
+                <span style="margin-left: 40px;">Neutral</span>  
+                <span style="margin-left: 40px;">Likely</span> 
+                <span style="margin-left: 40px;">Very Likely</span></div>
+        </div>
+            <label for="buy" class="main"> </label>
+            <div style="margin-left: 10px; margin-right: 10px;background-color: lightgray;">Buy from us again
+                <span style="margin-left: 50px;"><input type="radio" name="buy" id="vul"></span>
+                <span style="margin-left: 100px;"><input type="radio" name="buy" id="ul"></span>
+                <span style="margin-left: 70px;"><input type="radio" name="buy" id="ntl"></span>
+                <span style="margin-left: 70px;"><input type="radio" name="buy" id="ly"></span>
+                <span style="margin-left: 80px;"><input type="radio" name="buy" id="vly"></span>
+            </div>
+            <label for="rcmndpdt" class="main"> </label>
+            <div style="margin-left: 10px; margin-right: 10px;">Recommend our<br>Product to others
+                <span style="margin-left: 60px;"><input type="radio" name="rcmndpdt" id="vul"></span>
+                <span style="margin-left: 100px;"><input type="radio" name="rcmndpdt" id="ul"></span>
+                <span style="margin-left: 70px;"><input type="radio" name="rcmndpdt" id="ntl"></span>
+                <span style="margin-left: 70px;"><input type="radio" name="rcmndpdt" id="ly"></span>
+                <span style="margin-left: 80px;"><input type="radio" name="rcmndpdt" id="vly"></span>
+            </div>
+            <label for="rcmndcmpy" class="main"> </label>
+            <div style="margin-left: 10px; margin-right: 10px;background-color: lightgray;">Recommend our<br>Company to others
+                <span style="margin-left: 50px;"><input type="radio" name="rcmndcmpy" id="vul"></span>
+                <span style="margin-left: 100px;"><input type="radio" name="rcmndcmpy" id="ul"></span>
+                <span style="margin-left: 70px;"><input type="radio" name="rcmndcmpy" id="ntl"></span>
+                <span style="margin-left: 70px;"><input type="radio" name="rcmndcmpy" id="ly"></span>
+                <span style="margin-left: 80px;"><input type="radio" name="rcmndcmpy" id="vly"></span>
+            </div>
+        </tr>
+        <tr>
+             <div class="main"><b>Additional comments or suggestions</b></div>
+            <div>
+                <textarea name="comments" id="comments" style="font-family:sans-serif;font: size 3px; width:95% ;height: 100px;" class="main">
+
+                </textarea>
+                </div>
+                <input type="submit" value="Submit" class="main">
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
